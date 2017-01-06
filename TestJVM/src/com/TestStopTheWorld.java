@@ -46,6 +46,8 @@ public class TestStopTheWorld {
     }
 
     public static void main(String[] args) throws InterruptedException {
+        //需要设置VM arguments如下：
+        //-Xmx512m -Xms512m -XX:+UseSerialGC -Xloggc:gc.log -XX:+PrintGCDetails -Xmn1m -XX:PretenureSizeThreshold=50 -XX:MaxTenuringThreshold=1
         PrintThread t = new PrintThread();
         MyThread t1 = new MyThread();
         t.start();
